@@ -12,20 +12,20 @@ function initMap() {
   var map = L.map('map', {
     center: [0, 0],
     zoom: 5,
-    scrollWheelZoom: false
+    scrollWheelZoom: true
   });
 
   // This displays a base layer map (other options available)
-  var lightAll = new L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
-  }).addTo(map);
+  var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+}).addTo(map);
 
   // This customizes link to view source code; add your own GitHub repository
-  map.attributionControl
-  .setPrefix('View <a href="http://github.com/jackdougherty/leaflet-storymap" target="_blank">code on GitHub</a>, created with <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>');
+  //map.attributionControl
+  //.setPrefix('View <a href="http://github.com/jackdougherty/leaflet-storymap" target="_blank">code on GitHub</a>, created with <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>');
 
   // This loads the GeoJSON map data file from a local folder
-  $.getJSON('map.geojson', function(data) {
+  $.getJSON('data/map.geojson', function(data) {
     var geojson = L.geoJson(data, {
       onEachFeature: function (feature, layer) {
         (function(layer, properties) {
@@ -34,7 +34,7 @@ function initMap() {
           var numericMarker = L.ExtraMarkers.icon({
             icon: 'fa-number',
             number: feature.properties['id'],
-            markerColor: 'blue'
+            markerColor: 'red'
           });
           layer.setIcon(numericMarker);
 
@@ -46,7 +46,7 @@ function initMap() {
             "containerId": 'container' + feature.properties['id'],
             "chapter": feature.properties['chapter'],
             "imgSrc": feature.properties['image'],
-            "srcHref": feature.properties['source-link'],
+            "srcHref": feature.properties['source'],
             "srcText": feature.properties['source-credit'],
             "description": feature.properties['description']
           }

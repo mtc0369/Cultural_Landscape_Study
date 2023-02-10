@@ -7,17 +7,17 @@ body {
 
 #map {
     position: absolute;
-    left: 0;
-    width: 70vw;
+    right: 0;
+    width: 62vw;
     height: 100vh;
     z-index: 1;
 }
 
 #narration {
     position: absolute;
-    width: 30vw;
-    min-width: 300px;
-    right: 0px;
+    width: 40vw;
+    min-width: 400px;
+    left: 0px;
     height: 100vh;
     overflow: auto;
     z-index: 99;
@@ -57,11 +57,11 @@ body {
 
 #title {
     position: absolute;
-    right: 0px;
+    left: 0px;
     top: 0px;
     background-color: white;
-    width: 30vw;
-    min-width: 300px;
+    width: 40vw;
+    min-width: 400px;
     z-index: 100;
     margin: 0px;
     padding: 0px;
@@ -75,7 +75,7 @@ h3 {
     /* margin + padding = imageContainerMargin in script.js */
     /* Important for scrolling! */
     margin: 50px 0 0 0;
-    padding: 20px 0 0 0;
+    padding: 30px 0 0 0;
     text-align: center;
 }
 
@@ -122,6 +122,7 @@ h3 {
     text-align: left;
     font-size: 11pt;
     padding: 20px;
+    text-align: justify;
 }
 
 .inFocus {
