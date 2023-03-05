@@ -56,9 +56,9 @@ body {
 }
 
 #title {
-    position: absolute;
+    position: relative;
     left: 0px;
-    top: 0px;
+    top: 40px;
     background-color: white;
     width: 40vw;
     min-width: 400px;
