@@ -1,13 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>-->
   <title>leaflet-storymap</title>
-  <!-- Load Leaflet from a https CDN, not http. Look for updates at http://leafletjs.com/download.html -->
+  <!-- Load Leaflet from a https CDN, not http. Look for updates at http://leafletjs.com/download.html 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.0-rc.2/dist/leaflet.css"/>
-  <script src="https://unpkg.com/leaflet@1.0.0-rc.2/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet@1.0.0-rc.2/dist/leaflet.js"></script>-->
+  <script type="text/javascript" src="lib/Leaflet/leaflet-src.js"></script>
+  <link rel="stylesheet" href="lib/Leaflet/leaflet.css">
+  <link rel="stylesheet" href="lib/Leaflet/leaflet.js">
   <!-- load jQuery  -->
   <script src="lib/jquery-3.5.1.js"></script>
   <!-- load Font-Awesome -->
@@ -43,9 +48,9 @@
                 </li>-->
                 <li class="nav-item">
                     <a class="nav-link" href="index_VSFB_bubble.html"><b>Radiocarbon Date Chart</b></a>
-                </li>
+                </li>                
                 <li class="nav-item">
-                    <a class="nav-link" href="about.html"><b>About</b></a>
+                    <a class="nav-link" href="About.html"><b>About</b></a>
                 </li>
             </ul>
         </div> <!-- end .navbar-collapse -->
@@ -71,6 +76,7 @@
 
   <div id="map"></div>
 
+  
   <script type="text/javascript" src="js/script_story.js"></script>
 
   <!-- handlebars template for each individual story -->
