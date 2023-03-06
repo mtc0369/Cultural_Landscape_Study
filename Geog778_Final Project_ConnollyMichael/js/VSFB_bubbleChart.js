@@ -3,7 +3,10 @@
 (function(){   
     //variables for dates array and csv data    
     var attrArray = ["Early Holocene Period (10000-8501 BP)","Early Early Period (8500-5001 BP)","Late Early Period (5000-2601 BP)","Early Middle Period (2600-1301 BP)","Late Middle Period (1300-851 BP)","Early Late Period (850-501 BP)","Late Late Period (500-241 BP)","Mission Period (240-150 BP)"]
-    var expressed = attrArray[0]; //initial attribute    
+    var expressed = attrArray[0]; //initial attribute
+    
+    //var scaleArray = [1 = "Village", 2 = "Long-term residence", 3 = "Long-term residence, ideolgical", 4 = "Long-term residence, quarry", 5 = "Short=term residence", 6 = "Short-term residence, quarry", 7 = "Location(Chipping station/shell)", 8 = "Location(Chipping station)", 9 = "Unknown"]
+    //var typology = scaleArray[0]
 
     //chart frame dimensions
     var chartWidth = window.innerWidth * 0.82 
@@ -31,7 +34,7 @@
     function setMap(){         
 
         //use Promise.all to parallelize asynchronous data loading       
-        var promises = [d3.csv("data/VSFB_C14_BubbleChart.csv")];                    
+        var promises = [d3.csv("data/VSFB_C14_BubbleChart2.csv")];                    
                     Promise.all(promises).then(callback);        
 
         //data parameter - retrieves data as an array
@@ -72,7 +75,7 @@
                 .append("option")
                 .attr("class", "bubble_titleOption")
                 .attr("disabled", "true")
-                .text("Select Date");
+                .text("Select Time Period");
 
             //add attribute name options
             var attrOptions = dropdown
@@ -167,8 +170,8 @@
             //create color scale generator
             var colorScale = d3
                 .scaleOrdinal()            
-                .domain([0, 150, 240, 500, 850, 1300, 2600, 5000, 8500, 10000])
-                .range(["#053061", "#2166ac", "#4393c3", "#92c5de", "#d1e5f0", "#f7f7f7", "#fddbc7", "#f4a582", "#d6604d", "#b2182b"]);
+                .domain([data.Site_Type])
+                .range(["#053061", "#2166ac", "#4393c3", "#92c5de", "#d1e5f0", "#f7f7f7", "#fddbc7", "#f4a582", "#d6604d"]);
             return colorScale; 
         };
 
@@ -271,7 +274,7 @@
             .duration(1000)            
             .attr("r",function(d){
                 //calculate the circle radius based on GDP values in csv
-                var area = Math.abs(d.Site_Size * .04);                
+                var area = Math.abs(d.Site_Size * .05);                
                     return Math.sqrt(area/Math.PI);//converts the area to the radius                                   
             })
             //sets circle x coordinate            
@@ -320,14 +323,14 @@
             //adding legend title and style
             var colorLegend = d3.legendColor()                
                 .orient("verticle")
-                .ascending(true)
+                .ascending(false)
                 .scale(colorScale)                
                 .title("Average Years BP")
                 .labelFormat(",.2r")                                
                 .labelFormat("0")
                 .shapeWidth(35)
                 .shapeHeight(35)                              
-                //.labels(d3.legendHelpers.thresholdLabels)
+                //.labels(d3.legendHelpers.ordinalLabels)
 
             legend.select(".bubble_legend")
                 .call(colorLegend);//calling d3 colorlegend                           
@@ -344,14 +347,14 @@
 
             //setting the scale for bubble size in legend
             var size = d3.scaleSqrt()
-                .domain([1, 100])  
+                .domain([1, 85])  
                 .range([1, 2])//Size in pixel
 
             //Add legend circles with manual breaks and position elements
             var valuesToShow = [10000, 50000, 150000, 300000]
             var xCircle = 75
             var xLabel = 165
-            var yCircle = 160
+            var yCircle = 170
 
             //creating and styling legend circles
             legendSize
@@ -362,7 +365,7 @@
                 .attr("cx", xCircle)
                 .attr("cy", function(d){ return yCircle - size(d) } )
                 .attr("r", function(d){ 
-                    var area = Math.abs(d * .04);                
+                    var area = Math.abs(d * .05);                
                     return Math.sqrt(area/Math.PI);
                 })
                 .style("fill", "none")

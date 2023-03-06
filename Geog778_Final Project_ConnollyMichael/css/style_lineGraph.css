@@ -83,6 +83,7 @@ body { font: 12px Arial;}
     font-size: 1.3em;
     font-weight: bold;
     text-shadow:2px 2px 4px rgb(163, 163, 163);
+    text-align: center;
     padding: 2px;
     background-color: rgb(240, 240, 240);
     color:#2400ee;
@@ -119,7 +120,7 @@ body { font: 12px Arial;}
     top: 700px;
     left: 20px;
     z-index: 50;
-    height: 170px;
+    height: 180px;
     width: 210px;
     font-family: 'Montserrat', sans-serif;
     font-size: 1em;
