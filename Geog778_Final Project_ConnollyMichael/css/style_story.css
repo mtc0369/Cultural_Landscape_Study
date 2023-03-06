@@ -113,7 +113,7 @@ h3 {
 }
 
 .source {
-    font-size: 9pt;
+    font-size: 10pt;
     margin: 20px;
 }
 
@@ -127,7 +127,7 @@ h3 {
 
 .inFocus {
     opacity: 1.0;
-    background-color: #f0f0f0;
+    background-color: #9cd4f5;
 }
 
 .outFocus {
@@ -161,4 +161,11 @@ h3 {
   .leaflet-control-container {
       display: none;
   }
+
+  .leaflet-marker-icon {
+    display: outside;
+    position: relative !important;
+    margin-left: 50px !important;
+    margin-top: 0px !important;
+  }    
 }

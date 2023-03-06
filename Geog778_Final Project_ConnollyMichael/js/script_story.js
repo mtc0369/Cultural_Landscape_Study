@@ -12,8 +12,13 @@ function initMap() {
   var map = L.map('map', {
     center: [0, 0],
     zoom: 5,
+    zoomControl: false,
     scrollWheelZoom: true
   });
+
+  L.control.zoom({
+    position: 'topright'
+}).addTo(map);
 
   // This displays a base layer map (other options available)
   var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
@@ -25,7 +30,7 @@ function initMap() {
   //.setPrefix('View <a href="http://github.com/jackdougherty/leaflet-storymap" target="_blank">code on GitHub</a>, created with <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>');
 
   // This loads the GeoJSON map data file from a local folder
-  $.getJSON('data/map.geojson', function(data) {
+  $.getJSON('data/story_map.geojson', function(data) {
     var geojson = L.geoJson(data, {
       onEachFeature: function (feature, layer) {
         (function(layer, properties) {
@@ -34,7 +39,7 @@ function initMap() {
           var numericMarker = L.ExtraMarkers.icon({
             icon: 'fa-number',
             number: feature.properties['id'],
-            markerColor: 'red'
+            markerColor: 'blue'
           });
           layer.setIcon(numericMarker);
 
