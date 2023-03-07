@@ -25,10 +25,7 @@ function initMap() {
 	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
 }).addTo(map);
 
-  // This customizes link to view source code; add your own GitHub repository
-  //map.attributionControl
-  //.setPrefix('View <a href="http://github.com/jackdougherty/leaflet-storymap" target="_blank">code on GitHub</a>, created with <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>');
-
+  
   // This loads the GeoJSON map data file from a local folder
   $.getJSON('data/story_map.geojson', function(data) {
     var geojson = L.geoJson(data, {
@@ -95,3 +92,4 @@ function initMap() {
 }
 
 initMap();
+

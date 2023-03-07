@@ -170,7 +170,7 @@
             //create color scale generator
             var colorScale = d3
                 .scaleThreshold()            
-                .domain(["Village", "Long-term residence (LTR)", "LTR, ideolgical", "LTR, quarry", "Short-term residence (STR)", "STR, quarry", "Loc(Chipping station/shell)", "Loc(Chipping station)", "Unknown"])
+                .domain([1, 2, 3, 4, 5, 6, 7, 8, 9])
                 .range(["#e41a1c", "#377eb8", "#4daf4a", "#984ea3", "#ff7f00", "#ffff33", "#a65628", "#f781bf", "#d9d9d9"]);
             return colorScale; 
         };
@@ -293,9 +293,9 @@
             })
             //applies style - color and stroke                        
             .style("fill", function(d){
-                var value = colorScale(d.Site_Type);
+                var value = colorScale(d.Site_Type_Num);
                 if (value !== 0){
-                    return colorScale(d.Site_Type);
+                    return colorScale(d.Site_Type_Num);
                 }
                 else{
                     return "#969696";
@@ -333,7 +333,7 @@
                 .shapeWidth(35)
                 .shapeHeight(35)
                 .labels(["Village", "Long-term residence (LTR)", "LTR, ideolgical", "LTR, quarry", "Short-term residence (STR)", "STR, quarry", "Loc(Chipping station/shell)", "Loc(Chipping station)", "Unknown"])                             
-                .labelWrap(100)
+                .labelWrap(120)
                 .labelAlign("start")  
                 //.labels(d3.legendHelpers.thresholdLabels)
 

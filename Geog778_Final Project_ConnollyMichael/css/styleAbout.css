@@ -145,4 +145,40 @@ body{
     font-size: 14px;
     border-radius: 8px;
 }
+.jumbotron{
+    background-image: url("../img/connections.jpg");
+    color: rgb(138, 34, 34);
+    padding: 3%;
+    border-radius: 0px;
+    font-family: 'Montserrat', sans-serif;
+}
+.navbar {
+	background-color:  rgb(55, 67, 136);
+	border-radius: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 800;
+}
+.navbar {
+    font-family: 'Montserrat', sans-serif;
+    
+    color: #242424;
+}
+.navbar-default .navbar-brand {
+	color: white;
+	font-size: px;
+	font-weight: bold;
+}
 
+/* Navbar links*/ 
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+    font-size: 16px;
+    padding: 10px;
+}
+
+a:hover {
+    color:rgb(253, 5, 54) !important;
+}
