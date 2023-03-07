@@ -170,7 +170,7 @@
             //create color scale generator
             var colorScale = d3
                 .scaleThreshold()            
-                .domain([1, 2, 3, 4, 5, 6, 7, 8, 9])
+                .domain([1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 8.1, 9])
                 .range(["#e41a1c", "#377eb8", "#4daf4a", "#984ea3", "#ff7f00", "#ffff33", "#a65628", "#f781bf", "#d9d9d9"]);
             return colorScale; 
         };
@@ -326,8 +326,8 @@
                 .ascending(false)
                 .scale(colorScale)                
                 .title("Site Typology")
-                //.labelFormat(",.2r")                                
-                //.labelFormat("0")
+                .labelFormat(",.2r")                                
+                .labelFormat("0")
                 //.shape("circle")
                 //.shapeRadius(15)
                 .shapeWidth(35)
