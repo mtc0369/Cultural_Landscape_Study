@@ -1,14 +1,14 @@
 body {
     padding: 0px;
     margin: 0px;
-    font-family: "Helvetica", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     overflow: hidden;
 }
 
 #map {
     position: absolute;
     right: 0;
-    width: 62vw;
+    width: 60vw;
     height: 100vh;
     z-index: 1;
 }
@@ -24,7 +24,6 @@ body {
     background: rgba(254,254,254, 1.0); /* to apply opacity background only. */
 }
 
-
 #contents {
     padding: 0%;
     width: 100%;
@@ -35,7 +34,7 @@ body {
 }
 
 #contents .space-at-the-top {
-    height: 30px;
+    height: 20px;
     margin: 0px;
 }
 
@@ -43,7 +42,7 @@ body {
     height: 1000px; /* use a large number to ensure the last item is scrollable */
     margin: 0px;
     text-align: center;
-    padding-top: 70px;
+    padding-top: 50px;
 }
 
 #chapter {
@@ -58,13 +57,17 @@ body {
 #title {
     position: relative;
     left: 0px;
-    top: 40px;
+    top: 60px;
     background-color: white;
     width: 40vw;
     min-width: 400px;
-    z-index: 100;
+    z-index: 120;
     margin: 0px;
     padding: 0px;
+}
+
+#page {
+    margin-top: 0px;
 }
 
 h3 {
@@ -95,12 +98,13 @@ h3 {
 
 .img-holder {
     margin: 0px;
-    height: 200px;
-    max-height: 200px;
+    height: 300px;
+    max-height: 300px;
     width: 100%;
 }
 
 .title-text {
+    color:#2400ee;
     font-weight: bold;
     text-align: center;
     margin: 10px;
@@ -168,4 +172,34 @@ h3 {
     margin-left: 50px !important;
     margin-top: 0px !important;
   }    
+}
+.navbar {
+	background-color:  rgb(55, 67, 136);
+	border-radius: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 800;
+}
+.navbar {
+    font-family: 'Montserrat', sans-serif;
+    
+    color: #242424;
+}
+.navbar-default .navbar-brand {
+	color: white;
+	font-size: px;
+	font-weight: bold;
+}
+
+/* Navbar links*/ 
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+    font-size: 16px;
+    padding: 10px;
+}
+
+a:hover {
+    color:rgb(253, 5, 54) !important;
 }

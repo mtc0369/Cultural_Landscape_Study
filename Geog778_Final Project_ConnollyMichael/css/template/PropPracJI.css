@@ -1,0 +1,106 @@
+/*Add CSS styles here*/
+body{
+    font-family: 'Garamond', serif;
+    background-color:rgb(49, 49, 51);
+    color: rgb(242, 247, 213);
+}
+/*title div class style*/
+#title {
+    padding: 5px;
+}
+/*Popup style*/
+.leaflet-popup-content p {
+    margin: 0.2em 0;
+}
+/*popup image parameters*/
+.popupImage{
+    width: 100%;
+}
+
+/*Map div class style*/
+#map {
+    height: 600px;
+    width: 100%;
+    display: inline-block;
+    /*vertical-align: top;*/
+    
+}
+
+/*text id div class style*/
+#textid {
+    width: 95%; 
+    height:550px;
+
+}
+/*sequence box style*/
+.sequence-control-container {
+    width: 300px;
+    height: 70px;
+    background-color: rgba(243, 187, 187, 0.8);
+    padding: 10px;
+    line-height: 45px;
+    text-align: center;
+    border: solid rgb(180, 19, 19) 1px;
+}
+
+.dropdown-control-container {
+    width: 300px;
+    height: 70px;
+    background-color: rgba(243, 187, 187, 0.8);
+    padding: 10px;
+    line-height: 45px;
+    text-align: center;
+    border: solid rgb(180, 19, 19) 1px;
+}
+
+/*style range slider style*/
+.range-slider {
+    width: 175px;
+    fill:aqua;
+    height: 5px;
+    background: white;
+}
+
+.step {
+    width: 45px;
+}
+
+.step img {
+    width: 100%;
+    height: auto;
+}
+
+/*Panel box style from chapter 5 sequences box*/
+#panel {
+    width: 25%;
+    padding: 20px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    line-height: 42px;
+}
+ 
+#forward {
+    float: right;
+}
+
+#reverse {
+    float: left;
+}
+/*legend style*/
+.legend-control-container {
+    width: 160px;
+    height: 110px;
+    font-weight: bold;
+    color:black;
+    background-color: rgba(243, 187, 187, 0.8);
+    padding: 10px;
+    text-align: center;
+    border: solid rgb(180, 19, 19) 1px;
+    font-family: 'Arial Narrow', sans-serif;
+    font-size: 14px;
+}
+
+.legend-contol-container p{
+    margin: 1;
+}
