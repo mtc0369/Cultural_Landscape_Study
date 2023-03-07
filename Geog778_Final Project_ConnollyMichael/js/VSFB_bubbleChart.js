@@ -51,10 +51,10 @@
             //calling create dropdown
             createDropdown(csvData);
 
-            //calling create legend function for gas flow values
+            //calling create legend function 
             createLegend(csvData, expressed, colorScale);
 
-            //calling ize legend for GDP values
+            //calling size legend 
             createSizeLegend(csvData, expressed, colorScale);            
         };
     };
@@ -169,9 +169,9 @@
             
             //create color scale generator
             var colorScale = d3
-                .scaleOrdinal()            
-                .domain([data.Site_Type])
-                .range(["#053061", "#2166ac", "#4393c3", "#92c5de", "#d1e5f0", "#f7f7f7", "#fddbc7", "#f4a582", "#d6604d"]);
+                .scaleThreshold()            
+                .domain(["Village", "Long-term residence (LTR)", "LTR, ideolgical", "LTR, quarry", "Short-term residence (STR)", "STR, quarry", "Loc(Chipping station/shell)", "Loc(Chipping station)", "Unknown"])
+                .range(["#e41a1c", "#377eb8", "#4daf4a", "#984ea3", "#ff7f00", "#ffff33", "#a65628", "#f781bf", "#d9d9d9"]);
             return colorScale; 
         };
 
@@ -293,9 +293,9 @@
             })
             //applies style - color and stroke                        
             .style("fill", function(d){
-                var value = d[expressed];
+                var value = colorScale(d.Site_Type);
                 if (value !== 0){
-                    return colorScale(d[expressed]);
+                    return colorScale(d.Site_Type);
                 }
                 else{
                     return "#969696";
@@ -325,12 +325,17 @@
                 .orient("verticle")
                 .ascending(false)
                 .scale(colorScale)                
-                .title("Average Years BP")
-                .labelFormat(",.2r")                                
-                .labelFormat("0")
+                .title("Site Typology")
+                //.labelFormat(",.2r")                                
+                //.labelFormat("0")
+                //.shape("circle")
+                //.shapeRadius(15)
                 .shapeWidth(35)
-                .shapeHeight(35)                              
-                //.labels(d3.legendHelpers.ordinalLabels)
+                .shapeHeight(35)
+                .labels(["Village", "Long-term residence (LTR)", "LTR, ideolgical", "LTR, quarry", "Short-term residence (STR)", "STR, quarry", "Loc(Chipping station/shell)", "Loc(Chipping station)", "Unknown"])                             
+                .labelWrap(100)
+                .labelAlign("start")  
+                //.labels(d3.legendHelpers.thresholdLabels)
 
             legend.select(".bubble_legend")
                 .call(colorLegend);//calling d3 colorlegend                           

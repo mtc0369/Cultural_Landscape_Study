@@ -23,7 +23,7 @@ body { font: 12px Arial;}
     height: 205px;
     min-width: 40px;
     color: #fff;
-    background-color: #016377;
+    background-color: #010377;
     border: solid thin #fff;
     padding: 5px 10px;    
     border-radius: 10px;
@@ -95,10 +95,10 @@ body { font: 12px Arial;}
 /*styling for bubble chart legend box*/
 .bubble_legendBox {
     position: absolute;
-    top: 120px;
+    top: 150px;
     left: 20px;
     z-index: 50;
-    height: 570px;
+    height: 410px;
     width: 210px;
     font-family: 'Montserrat', sans-serif;
     font-size: 1em;
@@ -117,10 +117,10 @@ body { font: 12px Arial;}
 /*styling for bubble chart size legend*/
 .size_legendBox {
     position: absolute;
-    top: 700px;
+    top: 600px;
     left: 20px;
     z-index: 50;
-    height: 180px;
+    height: 190px;
     width: 210px;
     font-family: 'Montserrat', sans-serif;
     font-size: 1em;

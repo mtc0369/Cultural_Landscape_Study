@@ -1,0 +1,148 @@
+/*Add CSS styles here*/
+body{
+    font-family: 'Garamond', serif;
+    background-color:rgb(49, 49, 51);
+    /* color: rgb(242, 247, 213); */
+}
+/*title div class style*/
+#title {
+    padding: 5px;
+}
+/*Popup style*/
+.leaflet-popup-content p {
+    margin: 0.2em 0;
+}
+/*popup image parameters*/
+.popupImage{
+    width: 100%;
+}
+
+/*Map div class style*/
+#map {
+    height: 600px;
+    width: 100%;
+    display: inline-block;
+    /*vertical-align: top;*/
+    
+}
+
+/*text id div class style*/
+#textid {
+    width: 95%; 
+    height:550px;
+
+}
+/*sequence box style*/
+.sequence-control-container {
+    width: 300px;
+    height: 50px;
+    background-color: rgba(243, 187, 187, 0.8);
+    padding: 10px;
+    line-height: 45px;
+    text-align: center;
+    border: solid rgb(180, 19, 19) 1px;
+}
+
+/*style range slider style*/
+.range-slider {
+    width: 175px;
+    fill:aqua;
+    height: 5px;
+    background: white;
+}
+
+
+.popup{
+    background-color: white;
+    width: 850px;
+    padding: 30px 40px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    border: medium solid #C3C9C6;
+    border-width: 3px;
+    border-radius: 15px;
+    display: none;
+    text-align: center;
+    font-size: 20px;
+    box-shadow: 4px 4px 4px #999;
+}
+
+.popup button{
+    display: block;
+    margin: 0 0 20px auto;
+    background-color: transparent;
+    font-size: 25px;
+    color: white;
+    background: #486052;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.step {
+    width: 45px;
+}
+
+.step img {
+    width: 100%;
+    height: auto;
+}
+
+/*Panel box style from chapter 5 sequences box*/
+#panel {
+    width: 25%;
+    padding: 20px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    line-height: 42px;
+}
+ 
+#forward {
+    float: right;
+}
+
+
+
+.info{ 
+    padding: 6px 8px; 
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: rgba(255,255,255,0.8); 
+    box-shadow: 0 0 15px rgba(0,0,0,0.2); 
+    color:black;
+    border-radius: 8px; 
+} 
+    /* this controls the legend color in the top right for the variable and hover, as well as the bottom left legend*/
+
+    
+ .info h4 { 
+    margin: 0 0 5px; 
+    color: #777;
+}
+
+
+.legend { text-align: left; line-height: 18px; color: #555; } .legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; } */
+
+#reverse {
+    float: left;
+}
+/*legend style*/
+.legend-control-container {
+    width: 160px;
+    height: 110px;
+    font-weight: bold;
+    color:black;
+    background-color: rgba(255,255,255,0.8);
+    padding: 10px;
+    text-align: center;
+    border: solid rgb(180, 19, 19) 1px;
+    font-family: 'Arial Narrow', sans-serif;
+    font-size: 14px;
+    border-radius: 8px;
+}
+
