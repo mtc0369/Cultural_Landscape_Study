@@ -1,5 +1,5 @@
 var imageContainerMargin = 70;  // Margin + padding
-
+var geojson;
 // This watches for the scrollable container
 var scrollPosition = 0;
 $('div#contents').scroll(function() {
@@ -28,7 +28,7 @@ function initMap() {
   
   // This loads the GeoJSON map data file from a local folder
   $.getJSON('data/story_map.geojson', function(data) {
-    var geojson = L.geoJson(data, {
+    geojson = L.geoJson(data, {
       onEachFeature: function (feature, layer) {
         (function(layer, properties) {
           // This creates numerical icons to match the ID numbers
@@ -77,7 +77,7 @@ function initMap() {
 
           // Make markers clickable
           layer.on('click', function() {
-            $("div#contents").animate({scrollTop: areaTop + 60 + "px"});
+            $("div#contents").animate({scrollTop: areaTop + 60 + "px"});//controls margins for explore and click in the panels
           });
 
         })(layer, feature.properties);
@@ -88,6 +88,17 @@ function initMap() {
     $('#contents').append("<div class='space-at-the-bottom'><a href='#space-at-the-top'><i class='fa fa-chevron-up'></i></br><small>Top</small></a></div>");
     map.fitBounds(geojson.getBounds());
     geojson.addTo(map);
+
+    var baseMaps = {
+      "Imagery": Esri_WorldImagery
+    };
+    
+    var overlayMaps = {
+        "Points": geojson
+    };
+
+    var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
+
   });
 }
 
