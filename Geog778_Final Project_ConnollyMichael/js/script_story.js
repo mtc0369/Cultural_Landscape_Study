@@ -77,7 +77,7 @@ function initMap() {
 
           // Make markers clickable
           layer.on('click', function() {
-            $("div#contents").animate({scrollTop: areaTop + "px"});
+            $("div#contents").animate({scrollTop: areaTop + 60 + "px"});
           });
 
         })(layer, feature.properties);

@@ -9,8 +9,9 @@ body {
     position: absolute;
     right: 0;
     width: 60vw;
-    height: 100vh;
+    height: calc(100vh - 60px);
     z-index: 1;
+    margin-top: 60px;
 }
 
 #narration {
@@ -28,7 +29,8 @@ body {
     padding: 0%;
     width: 100%;
     margin-top: 0px; /*Adjust if Title header needs more space */
-    height: 100%; /* Adjust to fit max Description length, one setting for all; alternative is 100% */
+    height: calc(100vh - 60px); /* Adjust to fit max Description length, one setting for all; alternative is 100% */
+    margin-top:60px;
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -176,7 +178,7 @@ h3 {
 .navbar {
 	background-color:  rgb(55, 67, 136);
 	border-radius: 0;
-    position: fixed;
+    position: fixed !important;
     top: 0;
     left: 0;
     width: 100vw;
