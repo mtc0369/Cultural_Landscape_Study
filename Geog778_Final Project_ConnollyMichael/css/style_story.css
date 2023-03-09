@@ -35,12 +35,12 @@ body {
 
 #contents .space-at-the-top {
     height: 20px;
-    margin: 0px;
+    margin: 10px;
 }
 
 #contents .space-at-the-bottom {
     height: 1000px; /* use a large number to ensure the last item is scrollable */
-    margin: 0px;
+    margin: 30px;
     text-align: center;
     padding-top: 50px;
 }
@@ -67,11 +67,11 @@ body {
 }
 
 #page {
-    margin-top: 0px;
+    margin-top: 10px;
 }
 
 h3 {
-    margin-bottom: 0px;
+    margin-bottom: 10px;
 }
 
 .image-container {
@@ -122,10 +122,10 @@ h3 {
 }
 
 .description {
-    margin: 20px;
+    margin: 0px;
     text-align: left;
     font-size: 11pt;
-    padding: 20px;
+    padding: 30px;
     text-align: justify;
 }
 
@@ -184,7 +184,6 @@ h3 {
 }
 .navbar {
     font-family: 'Montserrat', sans-serif;
-    
     color: #242424;
 }
 .navbar-default .navbar-brand {
@@ -199,7 +198,83 @@ h3 {
     font-size: 16px;
     padding: 10px;
 }
+.nav-link:hover{
+    background-color: rgb(166, 190, 242);
+    border-radius: 5px;
+}
 
 a:hover {
     color:rgb(253, 5, 54) !important;
 }
+
+/* This is for the background */
+.popup-screen{
+    z-index: 999999999999999999999999 !important;
+    position:fixed !important;
+    background: rgba(255,255,255,0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    width: 100% !important;
+    height: 100vh !important;
+    display: flex; /* DO NOT PUT !IMPORTANT here, you need the display to change from flex to none with the cookie setup. The cookie couldn't override the !important, so it wasn't working */
+    justify-content: center !important;
+    align-items: center !important;
+    visibility: hidden;
+    transition: 0.5s ease;
+    transition-property: visibility;
+}
+
+.popup-screen.active{
+    visibility: visible;
+
+}
+
+/* This is for the box itself */
+.popup-box{
+    position: relative;
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(10px);
+    max-width:50 px;
+    width: 40%;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0 5px 25px rgb(0 0 0 / 20%);
+    transform: scale(0);
+    transition: 0.6s ease;
+    transition-property: transform;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.popup-screen.active .popup-box{
+    transform: scale(1);
+}
+
+.close-btn{
+    position:absolute;
+    font-size: 1em;
+    top:0;
+    right: 0;
+    margin: 15px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 0.3s ease;
+    transition-property: opacity;
+    
+}
+
+.close-btn:hover{
+    opacity: 1;
+
+}
+
+.popup-box h2{
+    font-size: 2.1 px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+

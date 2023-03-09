@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+            <title></title>
+
+        <!--put your external stylesheet links here-->
+        <link rel="stylesheet" href="css/style.css">
+
+        <!-- This link below is for the website cookie -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+
+        <link rel="stylesheet" href="lib/leaflet.css">
+
+        <link rel="stylesheet" href="css/bootstrap.minREAL.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+
+        <!--[if IE<9]>
+            <link rel="stylesheet" href="css/style.ie.css">
+        <![endif]-->
+
+         <!--you can also place internal styles here;
+             place these within <style> tags-->
+        
+    </head>
+
+    <body>
+    
+       
+        <div class="popup-screen">
+            <div class="popup-box">
+                <i class="fas fa-times close-btn"></i>
+                <h2>Welcome!</h2>
+                <p>This tool explores 2019 - 2021 (and Jan/Feb 2022) annual natural gas flows and their context to the European Union's largest economies by GDP:</p>
+                <ul>
+                    <li>Choropleth of annual net imports (Hover for details)</li>
+                    <li>Routes of principal pipelines</li>
+                    <li>Location and flow volumes across borders (Use Dropdown Filter to explore)</li>
+                    <li>Graphs and charts of natural gas flows</li>
+                  </ul> 
+
+                <p>Layers can be toggled. Select other months and years with the drop down menus. </p>
+                
+            </div>
+
+        </div>
+        
+
+            <!-- Create the navbar -->
+            <nav class="navbar navbar-expand-lg navbar-default">
+                <!-- Container inside the navbar header to span the page -->
+                <div class="container-fluid">
+                    <!-- Creates the navbar header -->
+                    <!-- <a class="navbar-brand" href="#">Bryce Linden</a> -->
+                    <!-- This complex script is just for a hamburger button, which will appear on smaller screens -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-list" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" /></svg>
+                        <span class="menu"> Menu</span>
+                    </button>
+                    <!-- Links to include in navbar -->
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <!-- Unordered list for links on navbar -->
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html"><b>Map</b></a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="index_lineGraph.html"><b>Line Graph</b></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index_ bubble.html"><b>Bubble Chart</b></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html"><b>About</b></a>
+                            </li>
+                        </ul>
+                    </div> <!-- end .navbar-collapse -->
+                </div> <!-- end .container-fluid -->
+            </nav> <!-- end navigation bar -->
+
+            <div class="jumbotron" style="height: 140px;">
+                <div class="container">
+                    <h1><center><b>Exploring Europe's Natural Gas Flows</center></b></h1>
+                    
+                </div>
+            </div>
+            
+            
+            
+            <div id="map"></div>
+
+
+            
+            <div id="updateButtons">
+                <form name="form1" id="form1">
+                    Year: <select name="year" id="year-select">
+                        <option value="" selected="selected">Select Year</option>
+                    </select>
+                    <br><Br>
+                    Month: <select name="month" id="month-select">
+                        <option value="" selected="selected">Select Year First</option>
+                    </select>
+                    <br><br>
+                
+                </form>
+                <button id="updateSymbolsButton" value="Submit">Update Symbols</button>
+            </div>
+
+            <div id="bottompattern">
+                <h2></h2>
+            </div>
+
+   
+            <script type="text/javascript">
+                const popupScreen = document.querySelector(".popup-screen");
+                const popupBox = document.querySelector(".popup-box");
+                const closeBtn = document.querySelector(".close-btn");
+                
+                window.addEventListener("load", () => {
+                    setTimeout(() => {
+                        popupScreen.classList.add("active");
+                    }, 1); //the number here governs the amount of time before the popup occurs. 1000 is one second
+                });
+    
+    
+                closeBtn.addEventListener("click", () => {
+                    popupScreen.classList.remove("active"); //this closes the popupscreen when you click on the X
+                    document.cookie = "Gas-cookie=testWebsite; max-age=" + 20 * 60; 
+                }); //cookie has twenty minutes before it expires
+    
+                const WebsiteCookie = document.cookie.indexOf("Gas-cookie=");
+    
+                if(WebsiteCookie != -1){
+                    popupScreen.style.display = "none"; //This hides the popup screen if the cookie is still active and not expired
+                }
+                else{
+                    popupScreen.style.display = "flex"; //this shows the popup screen if the cookie is expired
+                }
+    
+            </script>
+        <!--put your initial page content here-->
+
+        <!--you can also use this space for internal scripts;
+        place these within <script> tags-->
+
+        <!--put your external script links here-->
+        
+        
+        <script type="text/javascript" src="lib/leaflet-src.js"></script>
+        <script type="text/javascript" src="lib/jquery-3.5.1.js"></script>
+        <script type="text/javascript" src="data/pipeline_routes/MainEuropePipelines_Project_WGS1984.js"></script>
+        <script type="text/javascript" src="lib/bootstrap.min.js"> </script>
+        <script type="text/javascript" src="data/17eurocountries_correct.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+    </body>
+</html>
