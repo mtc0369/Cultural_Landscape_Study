@@ -1,3 +1,6 @@
+This webmap is a part of a project supporting a cultural landscape study in Santa Barbara County, California.
+
+
 # leaflet-storymap
 Leaflet storymap with scroll-driven navigation for narrative and point markers from easy-to-learn template, with GeoJSON data file.
 

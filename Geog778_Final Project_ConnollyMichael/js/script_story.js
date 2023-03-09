@@ -26,7 +26,7 @@ function initMap() {
 }).addTo(map);
 
   
-  // This loads the GeoJSON map data file from a local folder
+  // This loads the GeoJSON map data file from a local folder, must be ion WGS84
   $.getJSON('data/story_map.geojson', function(data) {
     geojson = L.geoJson(data, {
       onEachFeature: function (feature, layer) {
