@@ -25,7 +25,7 @@
 
     var y = d3.scaleLinear()        
         .range([chartInnerHeight -10, 50])
-        .domain([-900, 10000]);    
+        .domain([10000, -900]);    
         
     //begin script when window loads
     window.onload = setMap();
