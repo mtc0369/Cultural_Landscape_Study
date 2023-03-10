@@ -159,7 +159,7 @@
                 .attr("text-anchor", "middle")
                 .attr("x", chartWidth / 2)//assigns horizontal position
                 .attr("y", 740)//assign verticle position
-                .text("* All Dates are in Years Before Present (BP)")//text content
+                .text("* The Scale On The Y-Axis Represents Years Before Present (BP); Only Sites With Dates Corresponding To Each Time Period Appear In The Chart")//text content
                 
             updateChart(circles, csvData.length, colorScale);
         };        
@@ -179,7 +179,7 @@
         function highlight(props){
             //change stroke
             var selected = d3.selectAll("." + props.Site_Num.replace("(", '').replace(')',"").replaceAll(/\s+/g, ''))
-                .style("stroke", "red")
+                .style("stroke", "#deebf7")
                 .style("stroke-width", "3")
                 setLabel(props);//calling set label
         };
@@ -356,7 +356,7 @@
                 .range([1, 2])//Size in pixel
 
             //Add legend circles with manual breaks and position elements
-            var valuesToShow = [10000, 50000, 150000, 300000]
+            var valuesToShow = [1000, 10000, 50000, 150000, 300000]
             var xCircle = 75
             var xLabel = 165
             var yCircle = 170
@@ -414,14 +414,14 @@
                 .attr("text-anchor", "left")
                 .attr("x", 57)//assigns horizontal position
                 .attr("y", 38)//assign verticle position
-                .text("per capita (€)")//text content
+                .text("text")//text content
 
             legendSize.append("text")
                 .attr("class", "sizeLegend_Title")
                 .attr("text-anchor", "left") 
                 .attr("x", 57)//assigns horizontal position
                 .attr("y", 55)//assign verticle position
-                .text("2019 to 2022")//text content*/
+                .text("text")//text content*/
         };
 })();
 
